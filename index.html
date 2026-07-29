@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed robot animation surface (scroll-driven background) -->
+    <canvas id="scroll-canvas"></canvas>
+
+    <!-- Content layer that scrolls on top of the animation -->
+    <main id="content">
+
+        <!-- ============================================================ *
+             HERO — AIfy landing (top of page)
+         * ============================================================ -->
+        <header class="hero">
+            <nav class="nav">
+                <a class="brand" href="#">
+                    <span class="brand-mark">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#fff" aria-hidden="true">
+                            <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>
+                        </svg>
+                    </span>
+                    AIfy
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <a class="btn btn-primary nav-cta" href="#">Get started</a>
+            </nav>
+
+            <div class="hero-copy">
+                <h1 class="hero-title">Your AI companion to<br>increase your sales.</h1>
+                <p class="hero-sub">
+                    Harness the power of AI to automate outreach, streamline your
+                    sales workflow, and boost your revenue — all in one simple platform.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#">Get started</a>
+                    <a class="btn btn-ghost" href="#">
+                        <span class="play">&#9658;</span> See It in Action
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <!-- connector lines behind the cards -->
+                <svg class="connectors" viewBox="0 0 900 360" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M250,90 H400 Q450,90 450,140 V170" />
+                    <path d="M250,300 H400 Q450,300 450,250 V220" />
+                    <path d="M650,90 H500 Q450,90 450,140 V170" />
+                    <path d="M650,300 H500 Q450,300 450,250 V220" />
+                </svg>
+
+                <!-- glowing core -->
+                <div class="orb"></div>
+
+                <!-- Task Lists -->
+                <div class="ui-card card-tasklists glass-dark">
+                    <div class="uc-title">Task Lists</div>
+                    <div class="uc-row"><span class="chk"></span> Draft client proposal</div>
+                    <div class="uc-row"><span class="chk done">&#10003;</span> Update sales report</div>
+                    <div class="uc-row"><span class="chk done">&#10003;</span> Schedule team sync</div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="ui-card card-analytics glass-dark">
+                    <div class="uc-head">
+                        <span class="uc-title">Analytics</span>
+                        <span class="uc-badge">&#9650; 60% <em>from last mth</em></span>
+                    </div>
+                    <div class="chart">
+                        <div class="bars">
+                            <span style="height:35%"></span>
+                            <span style="height:50%"></span>
+                            <span style="height:65%"></span>
+                            <span style="height:80%"></span>
+                            <span style="height:95%"></span>
+                        </div>
+                        <div class="chart-x"><i>Apr</i><i>May</i><i>Jun</i><i>Jul</i><i>Aug</i></div>
+                    </div>
+                </div>
+
+                <!-- Workflows -->
+                <div class="ui-card card-workflows glass-dark">
+                    <div class="uc-title">Workflows</div>
+                    <div class="uc-row"><span class="chk done">&#10003;</span> Draft client proposal</div>
+                    <div class="uc-row dim"><span class="chk done">&#10003;</span> Manager review &amp; approval</div>
+                    <div class="uc-note">Create a workflow to publish a…</div>
+                </div>
+
+                <!-- Insights -->
+                <div class="ui-card card-insights glass-dark">
+                    <div class="uc-title">Insights</div>
+                    <div class="uc-row"><span class="dot"></span> Automate weekly reports</div>
+                    <div class="uc-pills">
+                        <span class="pill">activity trend</span>
+                        <span class="pill accent">&#36; Focus on top p…</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================================ *
+             ROADMAP — Product Development Roadmap section
+         * ============================================================ -->
+        <section class="roadmap-section">
+            <div class="roadmap-header">
+                <h2 class="roadmap-title" data-reveal="bottom">Product Development Roadmap</h2>
+                <p class="roadmap-sub" data-reveal="bottom">
+                    A clear and structured approach to building a secure and scalable financial platform.
+                </p>
+            </div>
+
+            <div class="roadmap-grid">
+                <!-- Month 1 Column -->
+                <div class="roadmap-column" data-reveal="bottom">
+                    <div class="roadmap-ring"></div>
+                    <h3 class="roadmap-month">Month 1</h3>
+                    <div class="roadmap-chips">
+                        <div class="roadmap-chip chip-short"><span class="chip-dot"></span> Market research</div>
+                        <div class="roadmap-chip chip-wide"><span class="chip-dot"></span> User needs analysis</div>
+                    </div>
+                </div>
+
+                <!-- Month 2 Column -->
+                <div class="roadmap-column" data-reveal="bottom">
+                    <div class="roadmap-ring"></div>
+                    <h3 class="roadmap-month">Month 2</h3>
+                    <div class="roadmap-chips">
+                        <div class="roadmap-chip chip-medium"><span class="chip-dot"></span> Product design</div>
+                        <div class="roadmap-chip chip-wide"><span class="chip-dot"></span> System development</div>
+                        <div class="roadmap-chip chip-medium offset-right"><span class="chip-dot"></span> User feedback</div>
+                    </div>
+                </div>
+
+                <!-- Month 3 Column -->
+                <div class="roadmap-column" data-reveal="bottom">
+                    <div class="roadmap-ring"></div>
+                    <h3 class="roadmap-month">Month 3</h3>
+                    <div class="roadmap-chips">
+                        <div class="roadmap-chip chip-short"><span class="chip-dot"></span> Beta launch</div>
+                        <div class="roadmap-chip chip-medium"><span class="chip-dot"></span> System development</div>
+                        <div class="roadmap-chip chip-wide offset-right"><span class="chip-dot"></span> Performance optimization</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ *
+             VIDEO PRESETS — Netflix-style full-width video showcase
+         * ============================================================ -->
+        <section class="video-showcase-section" data-reveal="bottom">
+            <div class="video-grid">
+                <!-- Video Box 1 -->
+                <div class="video-card" data-reveal="bottom">
+                    <div class="video-wrapper">
+                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video1.mp4"></video>
+                    </div>
+                </div>
+
+                <!-- Video Box 2 -->
+                <div class="video-card" data-reveal="bottom">
+                    <div class="video-wrapper">
+                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video2.mp4"></video>
+                    </div>
+                </div>
+
+                <!-- Video Box 3 -->
+                <div class="video-card" data-reveal="bottom">
+                    <div class="video-wrapper">
+                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video3.mp4"></video>
+                    </div>
+                </div>
+
+                <!-- Video Box 4 -->
+                <div class="video-card" data-reveal="bottom">
+                    <div class="video-wrapper">
+                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video4.mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opening breathing room: robot animation alone -->
+        <section class="intro-space"></section>
+
+        <!-- GALLERY: one full water-glass panel holding the image tiles.
+             On scroll the top row slides right, the bottom row slides left. -->
+        <section class="gallery-section">
+            <div class="gallery-panel glass" data-reveal="bottom">
+                <div class="gallery-row" id="gallery-row-1">
+                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile"><img alt=""></figure>
+                </div>
+                <div class="gallery-row" id="gallery-row-2">
+                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile"><img alt=""></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US: heading + placeholder text + one image slot -->
+        <section class="about-section">
+            <div class="about-inner glass">
+                <h2 class="about-title" data-reveal="left">ABOUT US</h2>
+                <p class="about-text" data-reveal="bottom">
+                    Replace this with your story. Add a couple of sentences about
+                    who you are, what you do, and what makes your work stand out.
+                    This text block is a placeholder ready for your own copy.
+                </p>
+                <div class="about-image glass" data-reveal="right"><img alt=""></div>
+            </div>
+        </section>
+
+        <!-- Closing breathing room so the animation finishes -->
+        <section class="outro-space"></section>
+
+    </main>
+
+    <script src="app.js"></script>
+    <script src="reveal.js"></script>
+</body>
+</html>
