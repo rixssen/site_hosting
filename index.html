@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Animation</title>
+    <link rel="preload" as="image" href="frames/frame-001.webp">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
          * ============================================================ -->
         <header class="hero">
             <nav class="nav">
-                <a class="brand" href="#">
+                <a class="brand" id="nav-brand" href="#">
                     <span class="brand-mark">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="#fff" aria-hidden="true">
                             <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>
@@ -27,24 +28,24 @@
                     AIfy
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#" id="nav-features">Features</a></li>
+                    <li><a href="#" id="nav-pricing">Pricing</a></li>
+                    <li><a href="#" id="nav-resources">Resources</a></li>
+                    <li><a href="#" id="nav-about">About</a></li>
                 </ul>
-                <a class="btn btn-primary nav-cta" href="#">Get started</a>
+                <a class="btn btn-primary nav-cta" id="nav-get-started" href="#">Get started</a>
             </nav>
 
             <div class="hero-copy">
-                <h1 class="hero-title">Your AI companion to<br>increase your sales.</h1>
+                <h1 class="hero-title">Put your business<br>on AI mode.</h1>
                 <p class="hero-sub">
-                    Harness the power of AI to automate outreach, streamline your
-                    sales workflow, and boost your revenue — all in one simple platform.
+                    Sales, video, ads, websites, databases — all run by AI, all handled by us.
+                    You bring the vision. We make it grow. Simple as that.
                 </p>
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="#">Get started</a>
-                    <a class="btn btn-ghost" href="#">
-                        <span class="play">&#9658;</span> See It in Action
+                    <a class="btn btn-primary" id="hero-get-started" href="#">Get started</a>
+                    <a class="btn btn-ghost" id="hero-see-action" href="#">
+                        <span class="play">&#9658;</span> See our work
                     </a>
                 </div>
             </div>
@@ -61,19 +62,19 @@
                 <!-- glowing core -->
                 <div class="orb"></div>
 
-                <!-- Task Lists -->
+                <!-- AI Sales -->
                 <div class="ui-card card-tasklists glass-dark">
-                    <div class="uc-title">Task Lists</div>
-                    <div class="uc-row"><span class="chk"></span> Draft client proposal</div>
-                    <div class="uc-row"><span class="chk done">&#10003;</span> Update sales report</div>
-                    <div class="uc-row"><span class="chk done">&#10003;</span> Schedule team sync</div>
+                    <div class="uc-title">AI Sales</div>
+                    <div class="uc-row"><span class="chk done">&#10003;</span> Auto-qualify leads</div>
+                    <div class="uc-row"><span class="chk done">&#10003;</span> Personalized outreach</div>
+                    <div class="uc-row"><span class="chk"></span> Book more meetings</div>
                 </div>
 
-                <!-- Analytics -->
+                <!-- Ad Campaigns -->
                 <div class="ui-card card-analytics glass-dark">
                     <div class="uc-head">
-                        <span class="uc-title">Analytics</span>
-                        <span class="uc-badge">&#9650; 60% <em>from last mth</em></span>
+                        <span class="uc-title">Ad Performance</span>
+                        <span class="uc-badge">&#9650; 3.2x <em>ROAS</em></span>
                     </div>
                     <div class="chart">
                         <div class="bars">
@@ -87,21 +88,21 @@
                     </div>
                 </div>
 
-                <!-- Workflows -->
+                <!-- AI Videos -->
                 <div class="ui-card card-workflows glass-dark">
-                    <div class="uc-title">Workflows</div>
-                    <div class="uc-row"><span class="chk done">&#10003;</span> Draft client proposal</div>
-                    <div class="uc-row dim"><span class="chk done">&#10003;</span> Manager review &amp; approval</div>
-                    <div class="uc-note">Create a workflow to publish a…</div>
+                    <div class="uc-title">AI Videos</div>
+                    <div class="uc-row"><span class="chk done">&#10003;</span> Generate ad video</div>
+                    <div class="uc-row dim"><span class="chk done">&#10003;</span> Auto-caption &amp; edit</div>
+                    <div class="uc-note">Publishing to Reels &amp; TikTok…</div>
                 </div>
 
-                <!-- Insights -->
+                <!-- Websites & Data -->
                 <div class="ui-card card-insights glass-dark">
-                    <div class="uc-title">Insights</div>
-                    <div class="uc-row"><span class="dot"></span> Automate weekly reports</div>
+                    <div class="uc-title">Sites &amp; Data</div>
+                    <div class="uc-row"><span class="dot"></span> Launch landing page</div>
                     <div class="uc-pills">
-                        <span class="pill">activity trend</span>
-                        <span class="pill accent">&#36; Focus on top p…</span>
+                        <span class="pill">SEO ready</span>
+                        <span class="pill accent">&#128190; Live database</span>
                     </div>
                 </div>
             </div>
@@ -112,43 +113,112 @@
          * ============================================================ -->
         <section class="roadmap-section">
             <div class="roadmap-header">
-                <h2 class="roadmap-title" data-reveal="bottom">Product Development Roadmap</h2>
+                <h2 class="roadmap-title" data-reveal="bottom">How we level up your business</h2>
                 <p class="roadmap-sub" data-reveal="bottom">
-                    A clear and structured approach to building a secure and scalable financial platform.
+                    From zero to AI-powered — we build it, launch it, and scale it. You just watch the numbers go up.
                 </p>
             </div>
 
             <div class="roadmap-grid">
-                <!-- Month 1 Column -->
+                <!-- Phase 1 Column -->
                 <div class="roadmap-column" data-reveal="bottom">
                     <div class="roadmap-ring"></div>
-                    <h3 class="roadmap-month">Month 1</h3>
+                    <h3 class="roadmap-month">Discover</h3>
                     <div class="roadmap-chips">
-                        <div class="roadmap-chip chip-short"><span class="chip-dot"></span> Market research</div>
-                        <div class="roadmap-chip chip-wide"><span class="chip-dot"></span> User needs analysis</div>
+                        <div class="roadmap-chip chip-short"><span class="chip-dot"></span> Business audit</div>
+                        <div class="roadmap-chip chip-wide"><span class="chip-dot"></span> AI opportunity map</div>
                     </div>
                 </div>
 
-                <!-- Month 2 Column -->
+                <!-- Phase 2 Column -->
                 <div class="roadmap-column" data-reveal="bottom">
                     <div class="roadmap-ring"></div>
-                    <h3 class="roadmap-month">Month 2</h3>
+                    <h3 class="roadmap-month">Build</h3>
                     <div class="roadmap-chips">
-                        <div class="roadmap-chip chip-medium"><span class="chip-dot"></span> Product design</div>
-                        <div class="roadmap-chip chip-wide"><span class="chip-dot"></span> System development</div>
-                        <div class="roadmap-chip chip-medium offset-right"><span class="chip-dot"></span> User feedback</div>
+                        <div class="roadmap-chip chip-medium"><span class="chip-dot"></span> AI sales system</div>
+                        <div class="roadmap-chip chip-wide"><span class="chip-dot"></span> Video &amp; ad content</div>
+                        <div class="roadmap-chip chip-medium offset-right"><span class="chip-dot"></span> Website &amp; database</div>
                     </div>
                 </div>
 
-                <!-- Month 3 Column -->
+                <!-- Phase 3 Column -->
                 <div class="roadmap-column" data-reveal="bottom">
                     <div class="roadmap-ring"></div>
-                    <h3 class="roadmap-month">Month 3</h3>
+                    <h3 class="roadmap-month">Scale</h3>
                     <div class="roadmap-chips">
-                        <div class="roadmap-chip chip-short"><span class="chip-dot"></span> Beta launch</div>
-                        <div class="roadmap-chip chip-medium"><span class="chip-dot"></span> System development</div>
-                        <div class="roadmap-chip chip-wide offset-right"><span class="chip-dot"></span> Performance optimization</div>
+                        <div class="roadmap-chip chip-short"><span class="chip-dot"></span> Launch campaigns</div>
+                        <div class="roadmap-chip chip-medium"><span class="chip-dot"></span> Automate workflows</div>
+                        <div class="roadmap-chip chip-wide offset-right"><span class="chip-dot"></span> Optimize &amp; grow revenue</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ *
+             SERVICES — What AIfy does, one writeup per offering
+         * ============================================================ -->
+        <section class="services-section">
+            <div class="roadmap-header">
+                <h2 class="roadmap-title" data-reveal="bottom">Everything AI. One team.</h2>
+                <p class="roadmap-sub" data-reveal="bottom">
+                    Why juggle five agencies when one squad can do it all? We plug AI into every part
+                    of your business — sales, marketing, tech — so nothing gets left behind.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card glass-dark" data-reveal="bottom">
+                    <div class="service-icon">📈</div>
+                    <h3 class="service-title">AI-Driven Sales</h3>
+                    <p class="service-text">
+                        Leads that qualify themselves. Follow-ups that never sleep. Your pipeline
+                        stays full 24/7 while you focus on the fun part — closing.
+                    </p>
+                </div>
+
+                <div class="service-card glass-dark" data-reveal="bottom">
+                    <div class="service-icon">🎬</div>
+                    <h3 class="service-title">AI Video Production</h3>
+                    <p class="service-text">
+                        Scroll-stopping ads, reels, and product vids — made and edited by AI.
+                        Studio-quality content, none of the studio budget or the wait.
+                    </p>
+                </div>
+
+                <div class="service-card glass-dark" data-reveal="bottom">
+                    <div class="service-icon">📣</div>
+                    <h3 class="service-title">Instagram &amp; Facebook Ads</h3>
+                    <p class="service-text">
+                        We run your Meta ads end to end. Sharper targeting, better creative, and
+                        budget that actually pulls its weight. Hello, ROAS.
+                    </p>
+                </div>
+
+                <div class="service-card glass-dark" data-reveal="bottom">
+                    <div class="service-icon">🌐</div>
+                    <h3 class="service-title">Websites That Convert</h3>
+                    <p class="service-text">
+                        Fast, clean, built to sell. Sites designed around how people actually buy —
+                        so more clicks turn into cash. No fluff.
+                    </p>
+                </div>
+
+                <div class="service-card glass-dark" data-reveal="bottom">
+                    <div class="service-icon">🗄️</div>
+                    <h3 class="service-title">Smart Databases &amp; Systems</h3>
+                    <p class="service-text">
+                        Your data, finally in order. Secure, scalable databases that link all your
+                        tools into one system that just works — and scales as you blow up.
+                    </p>
+                </div>
+
+                <div class="service-card glass-dark" data-reveal="bottom">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="service-title">AI Automation &amp; Workflows</h3>
+                    <p class="service-text">
+                        If it's boring and repetitive, AI's got it. Reports, posting, follow-ups —
+                        all automated, so your team does the stuff that actually matters.
+                    </p>
                 </div>
             </div>
         </section>
@@ -157,32 +227,42 @@
              VIDEO PRESETS — Netflix-style full-width video showcase
          * ============================================================ -->
         <section class="video-showcase-section" data-reveal="bottom">
+            <div class="roadmap-header">
+                <h2 class="roadmap-title" data-reveal="bottom">Videos that stop the scroll</h2>
+                <p class="roadmap-sub" data-reveal="bottom">
+                    Ads, reels, and brand stories made by AI — built for Instagram, Facebook, and TikTok. Thumb-stopping by default.
+                </p>
+            </div>
             <div class="video-grid">
                 <!-- Video Box 1 -->
                 <div class="video-card" data-reveal="bottom">
                     <div class="video-wrapper">
-                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video1.mp4"></video>
+                        <video class="hover-video" loop muted playsinline preload="none" data-src="videos/video1.mp4"></video>
+                        <div class="badge-icon">🔇 Hover to unmute</div>
                     </div>
                 </div>
 
                 <!-- Video Box 2 -->
                 <div class="video-card" data-reveal="bottom">
                     <div class="video-wrapper">
-                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video2.mp4"></video>
+                        <video class="hover-video" loop muted playsinline preload="none" data-src="videos/video2.mp4"></video>
+                        <div class="badge-icon">🔇 Hover to unmute</div>
                     </div>
                 </div>
 
                 <!-- Video Box 3 -->
                 <div class="video-card" data-reveal="bottom">
                     <div class="video-wrapper">
-                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video3.mp4"></video>
+                        <video class="hover-video" loop muted playsinline preload="none" data-src="videos/video3.mp4"></video>
+                        <div class="badge-icon">🔇 Hover to unmute</div>
                     </div>
                 </div>
 
                 <!-- Video Box 4 -->
                 <div class="video-card" data-reveal="bottom">
                     <div class="video-wrapper">
-                        <video class="hover-video" autoplay loop muted playsinline preload="auto" src="videos/video4.mp4"></video>
+                        <video class="hover-video" loop muted playsinline preload="none" data-src="videos/video4.mp4"></video>
+                        <div class="badge-icon">🔇 Hover to unmute</div>
                     </div>
                 </div>
             </div>
@@ -191,21 +271,50 @@
         <!-- Opening breathing room: robot animation alone -->
         <section class="intro-space"></section>
 
-        <!-- GALLERY: one full water-glass panel holding the image tiles.
-             On scroll the top row slides right, the bottom row slides left. -->
+        <!-- OUR WORK: one water-glass panel holding 8 labeled video tiles.
+             On scroll the top row slides right, the bottom row slides left.
+             Drop your generated clips into videos/work1.mp4 … work8.mp4 -->
         <section class="gallery-section">
+            <div class="gallery-heading" data-reveal="bottom">
+                <h2 class="roadmap-title">Everything we do, in action</h2>
+                <p class="roadmap-sub">Sales, ads, content, sites, and automation — watch what AI can do for your business.</p>
+            </div>
             <div class="gallery-panel glass" data-reveal="bottom">
                 <div class="gallery-row" id="gallery-row-1">
-                    <figure class="tile"><img alt=""></figure>
-                    <figure class="tile"><img alt=""></figure>
-                    <figure class="tile"><img alt=""></figure>
-                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/AI sales growth.mp4"></video>
+                        <figcaption class="tile-label">AI Sales Growth</figcaption>
+                    </figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/instgaram ads.mp4"></video>
+                        <figcaption class="tile-label">Instagram Ads</figcaption>
+                    </figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/facebook.mp4"></video>
+                        <figcaption class="tile-label">Facebook Ads</figcaption>
+                    </figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/ai video production.mp4"></video>
+                        <figcaption class="tile-label">AI Video Production</figcaption>
+                    </figure>
                 </div>
                 <div class="gallery-row" id="gallery-row-2">
-                    <figure class="tile"><img alt=""></figure>
-                    <figure class="tile"><img alt=""></figure>
-                    <figure class="tile"><img alt=""></figure>
-                    <figure class="tile"><img alt=""></figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/wesbite building.mp4"></video>
+                        <figcaption class="tile-label">Website Builds</figcaption>
+                    </figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/database.mp4"></video>
+                        <figcaption class="tile-label">Smart Databases</figcaption>
+                    </figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/ai automation.mp4"></video>
+                        <figcaption class="tile-label">AI Automation</figcaption>
+                    </figure>
+                    <figure class="tile">
+                        <video class="tile-video" loop muted playsinline preload="none" data-src="sliding videos/analytics and roas.mp4"></video>
+                        <figcaption class="tile-label">Analytics &amp; ROAS</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -213,11 +322,13 @@
         <!-- ABOUT US: heading + placeholder text + one image slot -->
         <section class="about-section">
             <div class="about-inner glass">
-                <h2 class="about-title" data-reveal="left">ABOUT US</h2>
+                <h2 class="about-title" data-reveal="left">ABOUT AIfy</h2>
                 <p class="about-text" data-reveal="bottom">
-                    Replace this with your story. Add a couple of sentences about
-                    who you are, what you do, and what makes your work stand out.
-                    This text block is a placeholder ready for your own copy.
+                    We're the AI team behind the glow-up. From closing more sales to
+                    making videos that go viral, running ads that actually convert, and
+                    building the sites and databases that hold it all together — we do
+                    the whole thing. One team, every AI move, obsessed with making your
+                    business win. No cap.
                 </p>
                 <div class="about-image glass" data-reveal="right"><img alt=""></div>
             </div>
@@ -230,5 +341,168 @@
 
     <script src="app.js"></script>
     <script src="reveal.js"></script>
+    <script src="interactive.js"></script>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <!-- Get Started Modal -->
+    <div id="get-started-modal" class="modal-container">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-dark">
+            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <h2 class="modal-title">Let's get your business winning</h2>
+            <p class="modal-sub">Free AI strategy call — no credit card, no pressure, no cap.</p>
+
+            <form id="get-started-form" class="modal-form">
+                <div class="form-group">
+                    <label for="gs-email">Work Email</label>
+                    <input type="email" id="gs-email" placeholder="name@company.com" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="gs-role">What do you need?</label>
+                    <select id="gs-role">
+                        <option value="everything">Everything — full AI transformation</option>
+                        <option value="sales">AI-driven sales</option>
+                        <option value="videos">AI video content</option>
+                        <option value="ads">Instagram &amp; Facebook ads</option>
+                        <option value="website">Website &amp; database build</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary modal-submit">Book My Free Call &rarr;</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <div id="pricing-modal" class="modal-container">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-dark modal-wide">
+            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <h2 class="modal-title">Pricing, built around you</h2>
+            <p class="modal-sub">
+                No fixed tiers. Every website, ad campaign, video, and automation is scoped and
+                quoted for exactly what you need — so you never pay for what you won't use.
+            </p>
+
+            <div class="quote-services">
+                <span class="qchip">Websites</span>
+                <span class="qchip">Instagram &amp; Facebook Ads</span>
+                <span class="qchip">AI Videos</span>
+                <span class="qchip">AI Workflows</span>
+                <span class="qchip">WhatsApp Automation</span>
+                <span class="qchip">Databases</span>
+            </div>
+
+            <div class="quote-cta">
+                <span class="quote-eyebrow">Get your custom quote</span>
+                <div class="quote-numbers-grid">
+                    <!-- Line 1 -->
+                    <div class="phone-card glass-card">
+                        <div class="phone-badge">
+                            <span class="pulse-dot"></span> Line 1 &bull; Direct Quote
+                        </div>
+                        <a class="quote-number" href="https://wa.me/918918218094" target="_blank" rel="noopener">+91 89182 18094</a>
+                        <div class="phone-actions">
+                            <a class="btn btn-whatsapp" href="https://wa.me/918918218094" target="_blank" rel="noopener" aria-label="WhatsApp +91 89182 18094">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.003l-1.417 5.176 5.297-1.389c1.464.798 3.116 1.218 4.775 1.219h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.668-1.039-5.176-2.926-7.062s-4.394-2.927-7.064-2.927zm5.952 14.184c-.252.712-1.463 1.36-2.025 1.442-.513.076-1.184.108-1.914-.126-.442-.14-1.015-.328-1.758-.65-3.097-1.341-5.122-4.464-5.277-4.67-.154-.207-1.261-1.677-1.261-3.2 0-1.522.795-2.271 1.077-2.58.283-.308.618-.386.823-.386.206 0 .412.002.59.011.192.008.452-.073.707.54.258.621.876 2.133.953 2.288.077.154.128.334.026.54-.103.206-.154.334-.309.515-.154.18-.325.402-.463.54-.154.154-.315.323-.135.632.18.309.8 1.32 1.716 2.135 1.177 1.049 2.17 1.375 2.479 1.529.309.154.49.129.67-.077.18-.207.772-.9.977-1.209.206-.309.412-.258.695-.154.283.103 1.799.849 2.108 1.003.309.154.515.231.59.36.077.129.077.747-.175 1.459z"/></svg>
+                                WhatsApp
+                            </a>
+                            <a class="btn btn-phone" href="tel:+918918218094" aria-label="Call +91 89182 18094">
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                Call
+                            </a>
+                            <button class="btn btn-copy-num" data-copy="8918218094" title="Copy Number">
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Line 2 -->
+                    <div class="phone-card glass-card">
+                        <div class="phone-badge">
+                            <span class="pulse-dot"></span> Line 2 &bull; Direct Quote
+                        </div>
+                        <a class="quote-number" href="https://wa.me/917042691335" target="_blank" rel="noopener">+91 70426 91335</a>
+                        <div class="phone-actions">
+                            <a class="btn btn-whatsapp" href="https://wa.me/917042691335" target="_blank" rel="noopener" aria-label="WhatsApp +91 70426 91335">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.003l-1.417 5.176 5.297-1.389c1.464.798 3.116 1.218 4.775 1.219h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.668-1.039-5.176-2.926-7.062s-4.394-2.927-7.064-2.927zm5.952 14.184c-.252.712-1.463 1.36-2.025 1.442-.513.076-1.184.108-1.914-.126-.442-.14-1.015-.328-1.758-.65-3.097-1.341-5.122-4.464-5.277-4.67-.154-.207-1.261-1.677-1.261-3.2 0-1.522.795-2.271 1.077-2.58.283-.308.618-.386.823-.386.206 0 .412.002.59.011.192.008.452-.073.707.54.258.621.876 2.133.953 2.288.077.154.128.334.026.54-.103.206-.154.334-.309.515-.154.18-.325.402-.463.54-.154.154-.315.323-.135.632.18.309.8 1.32 1.716 2.135 1.177 1.049 2.17 1.375 2.479 1.529.309.154.49.129.67-.077.18-.207.772-.9.977-1.209.206-.309.412-.258.695-.154.283.103 1.799.849 2.108 1.003.309.154.515.231.59.36.077.129.077.747-.175 1.459z"/></svg>
+                                WhatsApp
+                            </a>
+                            <a class="btn btn-phone" href="tel:+917042691335" aria-label="Call +91 70426 91335">
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                Call
+                            </a>
+                            <button class="btn btn-copy-num" data-copy="7042691335" title="Copy Number">
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <span class="quote-note">Text us what you need — we'll send a tailored quote within 24 hours.</span>
+                <div class="quote-actions">
+                    <button class="btn btn-ghost trigger-get-started" data-close>Book a call instead</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Modal -->
+    <div id="resources-modal" class="modal-container">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-dark">
+            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <h2 class="modal-title">Resources & Guides</h2>
+            <p class="modal-sub">Everything you need to put AI to work across your business.</p>
+            <div class="resources-list">
+                <a href="#" class="resource-item glass-dark trigger-get-started">
+                    <span class="res-icon">⚡</span>
+                    <div>
+                        <h4>Quick Start Guide</h4>
+                        <p>Launch your first AI sales sequence or ad campaign in minutes.</p>
+                    </div>
+                </a>
+                <a href="#" class="resource-item glass-dark trigger-get-started">
+                    <span class="res-icon">🎬</span>
+                    <div>
+                        <h4>AI Video Playbook</h4>
+                        <p>Turn products into scroll-stopping Reels, ads, and TikToks.</p>
+                    </div>
+                </a>
+                <a href="#" class="resource-item glass-dark trigger-get-started">
+                    <span class="res-icon">📊</span>
+                    <div>
+                        <h4>2026 AI Growth Report</h4>
+                        <p>See how businesses scale with AI sales, ads, and automation.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Roadmap Detail Modal -->
+    <div id="roadmap-modal" class="modal-container">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-dark">
+            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <h2 class="modal-title" id="rm-modal-title">Roadmap Detail</h2>
+            <p class="modal-sub" id="rm-modal-desc">Loading details...</p>
+            <div class="roadmap-status-badge">Status: <span class="status-active">Active Sprint</span></div>
+            <button class="btn btn-primary" data-close style="margin-top: 20px; width: 100%;">Close Overview</button>
+        </div>
+    </div>
+
+    <!-- Video Lightbox Modal -->
+    <div id="video-modal" class="modal-container">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-dark video-modal-content">
+            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <div class="video-lightbox-wrapper">
+                <video id="modal-video" controls playsinline></video>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

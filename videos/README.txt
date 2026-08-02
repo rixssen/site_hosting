@@ -1,0 +1,5 @@
+Place your 4 video files (.mp4) in this folder:
+- video1.mp4
+- video2.mp4
+- video3.mp4
+- video4.mp4

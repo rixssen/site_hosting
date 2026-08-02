@@ -64,7 +64,7 @@
         }
     }
 
-    // --- Interactive Video Sound Unmute on Hover -------------------------------
+    // --- Interactive Video Playback & Auto-Resume Handler -------------------
     const videoCards = document.querySelectorAll('.video-card');
 
     videoCards.forEach((card) => {
@@ -72,24 +72,77 @@
         const badgeText = card.querySelector('.badge-icon');
         if (!video) return;
 
-        // Ensure video plays continuously muted
+        // Ensure video is set to loop and muted for reliable background autoplay
         video.muted = true;
-        video.play().catch(() => {});
+        video.loop = true;
+        video.playsInline = true;
 
-        card.addEventListener('mouseenter', () => {
-            video.muted = false; // Unmute sound on pointer hover
-            card.classList.add('has-sound');
-            if (badgeText) badgeText.innerHTML = '🔊 Sound Active';
+        const forcePlayMuted = () => {
+            if (!video.src && video.dataset.src) video.src = video.dataset.src;
+            video.muted = true;
+            video.play().catch(() => {});
+        };
+
+        // If the browser pauses the video for any reason (e.g. unmuting policy),
+        // instantly auto-resume playback in muted mode so it NEVER freezes!
+        video.addEventListener('pause', () => {
+            // Only auto-resume if modal is not active
+            const activeModal = document.querySelector('.modal-container.active');
+            if (!activeModal) {
+                forcePlayMuted();
+            }
         });
 
+        // Playback starts lazily via the shared observer below (only when the
+        // card is near the viewport), so nothing downloads on first paint.
+
+        // Mouse Hover Interaction
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('has-sound');
+            if (badgeText) badgeText.innerHTML = '🔊 Sound Active';
+
+            // Attempt unmuting sound safely
+            video.muted = false;
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Browser blocked unmuted autoplay -> instantly resume muted playback
+                    forcePlayMuted();
+                });
+            }
+        });
+
+        // Mouse Leave Interaction
         card.addEventListener('mouseleave', () => {
-            video.muted = true; // Mute sound when pointer leaves (video keeps playing silently)
             card.classList.remove('has-sound');
             if (badgeText) badgeText.innerHTML = '🔇 Hover to unmute';
+            forcePlayMuted();
         });
     });
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
+
+    // --- Lazy-load & play every video only when near the viewport ----------
+    //     Videos use data-src (not src) so they never download until scrolled
+    //     into view — keeping bandwidth free for the background animation.
+    const lazyVideos = document.querySelectorAll('video[data-src]');
+    if ('IntersectionObserver' in window) {
+        const vObs = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                const v = e.target;
+                if (e.isIntersecting) {
+                    if (!v.src) v.src = v.dataset.src;
+                    v.muted = true;
+                    v.play().catch(() => {});
+                } else if (!v.paused) {
+                    v.pause();  // save CPU when off-screen
+                }
+            });
+        }, { rootMargin: '200px 0px', threshold: 0.1 });
+        lazyVideos.forEach((v) => vObs.observe(v));
+    } else {
+        lazyVideos.forEach((v) => { v.src = v.dataset.src; v.play().catch(() => {}); });
+    }
 })();
